@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <div class="header">
+    <a class="navbar-brand" href="dashboard"> <img
+      width="50"
+      alt="Angular Logo"
+      src="assets/Logo.png"/>
+       Agencia de Viaje</a>
+
+
+    <div class="header-right">
+      <a class="logout" (click)="GetUserById()">Perfil</a>
+      <a class="logout" (click)="ClearLocalStore()">Logout</a>
+    </div>
+  </div>
+  <header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="list-group list-group-flush mx-3 mt-4">
+      <div class="position-sticky">
+        <h3>Dashboard</h3>
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="listarusuarios" *ngIf="condicion" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Usuarios</span>
+          </a>
+          <a href="vuelos" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fas fa-lock fa-fw me-3"></i><span>Vuelos</span></a>
+
+              <a href="create" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-lock fa-fw me-3"></i><span>Gestionar Usuario</span></a>
+            </div>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br>
+
+    </nav>
+
+
+
+  </header>
+
+
+</body>
+
+
+</html>
+
+

@@ -1,0 +1,87 @@
+
+<div class="container">
+  <h1>Creando Usuarios</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="title">Nombre:</label>
+          <input
+              formControlName="usuNombre"
+              id="title"
+              type="text"
+              class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="title">Apellidos:</label>
+        <input
+            formControlName="usuApellidos"
+            id="usuApellidos"
+            type="text"
+            class="form-control">
+    </div>
+
+
+    <div class="form-group">
+      <label for="title">Cedula:</label>
+      <input
+          formControlName="usuNumDocumento"
+          id="usuNumDocumento"
+          type="text"
+          class="form-control">
+  </div>
+
+    <div class="form-group">
+      <label for="title">Direccion:</label>
+      <input
+          formControlName="usuDireccion"
+          id="usuDireccion"
+          type="text"
+          class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="title">Telefono:</label>
+    <input
+        formControlName="usuTelefono"
+        id="usuTelefono"
+        type="text"
+        class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="title">Correo:</label>
+  <input
+      formControlName="usuEmail"
+      id="usuEmail"
+      type="email"
+      class="form-control">
+</div>
+
+
+<div class="form-group">
+  <label for="title">Contraseña:</label>
+  <input
+      formControlName="usuContraseña"
+      id="usuContraseña"
+      type="password"
+      class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="title">Confirma Contraseña:</label>
+  <input
+      formControlName="usuContraseñaConfirma"
+      id="usuContraseñaConfirma"
+      type="password"
+      class="form-control">
+</div>
+<br>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+      <br><br><br>
+      <button *ngIf="condicion" type="button" class="btn btn-secondary" [routerLink]="['/listarusuarios']">Volver al Listado</button>
+      <button *ngIf="!condicion" type="button" class="btn btn-secondary" [routerLink]="['/dashboard']">Volver al dashboard</button>
+
+
+  </form>
+</div>

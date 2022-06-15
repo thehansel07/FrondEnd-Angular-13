@@ -1,0 +1,112 @@
+
+<div class="container">
+  <h1>Actualizando Usuario</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="idUsuario">ID:</label>
+      <input
+          formControlName="idUsuario"
+          id="idUsuario"
+          [(ngModel)]="usuario.idUsuario"
+          type="number"
+          class="form-control"
+          [disabled]="true">
+  </div>
+
+      <div class="form-group">
+          <label for="usuNombre">Nombre:</label>
+          <input
+              formControlName="usuNombre"
+              id="usuNombre"
+              [(ngModel)]="usuario.usuNombre"
+              type="text"
+              class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="usuApellido">Apellidos:</label>
+        <input
+            formControlName="usuApellido"
+            id="usuApellido"
+            [(ngModel)]="usuario.usuApellidos"
+            type="text"
+            class="form-control">
+    </div>
+
+
+    <div class="form-group">
+      <label for="usuNumDocumento">Cedula:</label>
+      <input
+          formControlName="usuNumDocumento"
+          id="usuNumDocumento"
+          [(ngModel)]="usuario.usuNumDocumento"
+          type="text"
+          class="form-control">
+  </div>
+
+    <div class="form-group">
+      <label for="usuDireccion">Direccion:</label>
+      <input
+          formControlName="usuDireccion"
+          id="usuDireccion"
+          [(ngModel)]="usuario.usuDireccion"
+          type="text"
+          class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="usuTelefono">Telefono:</label>
+    <input
+        formControlName="usuTelefono"
+        id="usutelefono"
+        [(ngModel)]="usuario.usutelefono"
+        type="text"
+        class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="usuEmail">Correo:</label>
+  <input
+      formControlName="usuEmail"
+      id="usuEmail"
+      [(ngModel)]="usuario.usuEmail"
+      type="email"
+      class="form-control">
+</div>
+
+
+<div class="form-group">
+  <label for="usuContraseña">Contraseña:</label>
+  <input
+      formControlName="usuContraseña"
+      id="usuContraseña"
+      type="password"
+      class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="usuContraseñaConfirma">Contraseña Confimar:</label>
+  <input
+      formControlName="usuContraseñaConfirma"
+      id="usuContraseñaConfirma"
+      type="password"
+      class="form-control">
+</div>
+
+<!-- <div class="form-group">
+  <label for="usuCondicion">Condicion</label>
+  <input
+      formControlName="usuCondicion"
+      id="usuCondicion"
+      [(ngModel)]="usuario.usucondicion"
+      type="checkbox"
+      class="form-control">
+</div> -->
+
+      <button class="btn btn-primary" type="submit">Guardar</button>
+      <br>
+      <br>
+      <button type="button" class="btn btn-secondary" [routerLink]="['/listarusuarios']">Volver al Listado</button>
+  </form>
+</div>

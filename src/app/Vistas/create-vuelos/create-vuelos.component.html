@@ -1,0 +1,71 @@
+
+<div class="container">
+  <h1>Creando Vuelos</h1>
+  <form [formGroup]="form" (ngSubmit)="submitVuelos()">
+
+
+    <div class="form-group">
+      <label for="idPaisOrigenVuelo">Pais Origen:</label>
+      <select
+      class="form-select"
+      aria-label="Default select example"
+      formControlName="idPaisOrigenVuelo">
+      <option value="" disabled>Seleccione Pais Origen</option>
+        <option *ngFor="let pais of paisList"
+        [value]="pais.idPais" >
+        {{pais.paisNombre}}
+    </option>
+      </select>
+  </div>
+
+    <div class="form-group">
+      <label for="idPaisDestinoVuelo">Pais Destino:</label>
+      <select
+      class="form-select"
+      aria-label="Default select example"
+      formControlName="idPaisDestinoVuelo">
+      <option value="" disabled>Seleccione Pais Destino</option>
+        <option *ngFor="let pais of paisList"
+        [value]="pais.idPais" >
+
+        {{pais.paisNombre}}
+    </option>
+      </select>
+  </div>
+
+    <div class="form-group">
+      <label for="cantPersonasVuelo">Cantidad De Persona:</label>
+      <input
+          formControlName="cantPersonasVuelo"
+          id="cantPersonasVuelo"
+          type="number"
+          class="form-control">
+  </div>
+
+    <div class="form-group">
+      <label for="fechaInicial">Fecha Inicio:</label>
+      <input
+          formControlName="fechaInicial"
+          id="fechaInicial"
+          type="date"
+          class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="fechaFinal">Fecha Fin:</label>
+    <input
+        formControlName="fechaFinal"
+        id="fechaFinal"
+        type="date"
+        class="form-control">
+</div>
+
+
+<br>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+      <br>
+      <br>
+      <button type="button" class="btn btn-secondary" [routerLink]="['/vuelos']">Volver al Listado</button>
+
+  </form>
+</div>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h5>Listados de Vuelos</h5>
+  <hr>
+<br>
+<div class="container">
+
+  <a href="#"[routerLink]="['/createVuelos']" class="btn btn-success">Crear vuelos</a>
+
+  <br><br><br>
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">ID Vuelo</th>
+        <th scope="col">Cantidad De Personas</th>
+        <th scope="col">Fecha Inicial</th>
+        <th scope="col">Fecha Final</th>
+        <th scope="col">Pais Origen</th>
+        <th scope="col">Pais Destino</th>
+        <th width="220px">Acciones</th>
+    </tr>
+    <tr *ngFor="let vuelo of vuelos">
+      <td>{{ vuelo.idVuelos}}</td>
+      <td>{{ vuelo.cantPersonasVuelo}}</td>
+      <td>{{ vuelo.fechaInicial}}</td>
+      <td>{{ vuelo.fechaFinal}}</td>
+      <td>{{ vuelo.paisDestinoVuelo}}</td>
+      <td>{{ vuelo.paisOrigenVuelo}}</td>
+
+      <td>
+        <a href="#" [routerLink]="['/vistas/', vuelo.idVuelos, 'vuelosedit']" class="btn btn-primary" style="background-color:green ;"><i class="bi bi-pencil-square"></i></a>
+        <button type="button" (click)="deletePost(+vuelo.idVuelos)" class="btn btn-danger" style="background-color:red ;" ><i class="bi bi-trash3-fill"></i></button>
+      </td>
+
+
+
+    </tr>
+  </table>
+  <button type="button" class="btn btn-primary" [routerLink]="['/dashboard']">Volver al dashborad</button>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
